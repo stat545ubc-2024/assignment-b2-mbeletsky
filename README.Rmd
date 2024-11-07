@@ -1,0 +1,85 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# assignmentb2mbeletsky
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of assignmentb2mbeletsky is to compress a specific **group_by()** then **summarize()** dplyr data exploration workflow into one function, **group_then_sumz()**. The workflow this function carries out accomplishes the following: in a dataset of your choice, groups the data by one variable, then for all those groups, counts unique observations for another variable. The function outputs a tibble where the rows are all organized from top to bottom by most to least unique counts.
+
+## Installation
+
+You can install the development version of assignmentb2mbeletsky from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("stat545ubc-2024/assignmentb2mbeletsky")
+```
+
+## Examples
+
+Let's look at some examples to more clearly see exactly what the package does. 
+
+First, let's load some packages that will give us access to datasets we can use in the examples.
+
+```{r load packages with example data}
+library(palmerpenguins)
+library(datateachr)
+```
+
+The "palmerpenguins" package includes a dataset about 344 penguins of 3 different species living on 3 different islands in the Palmer Archipelago, Antarctica. This package is often used as an example when learning how to do data exploration and analysis in R.
+
+The "datateachr" package includes several datasets that are also intended to be used as examples when learning how to do data exploration and analysis in R. 
+
+Then, let's load our package, which will give us the ability to use the **group_then_sumz()** function! We will also load the "dplyr" and "tidyr" packages as our "assignmentb2mbeletsky" package relies on functions imported from those packages. 
+
+```{r load our package}
+library(assignmentb2mbeletsky)
+library(dplyr)
+library(tidyr)
+library(magrittr)
+```
+
+### Penguins Example
+
+Now that all our packages have been loaded, here is an example of how **group_then_sumz()** can be used on the "penguins" dataset from the "palmerpenguins" package. Here's how the dataset looks. 
+
+```{r look at penguins}
+head(penguins)
+```
+Let's say we are interested in knowing how many penguin species there are on each island. We can group the data by island and then summarize by species. Using our **group_then_sumz()** function, that looks like this. 
+
+```{r function penguins example}
+group_then_sumz(penguins, island, species)
+```
+
+The function outputs a tibble telling us that on Biscoe there are 2 species, on Dream there are 2 species, and on Torgersen there is only 1 species. 
+
+### Trees Example
+
+Let's do another example with the "vancouver_trees" dataset from "datateachr". The "vancouver_trees" dataset includes data about public trees planted in the City of Vancouver, BC, Canada. Here's how the data looks.
+
+```{r look at trees}
+head(vancouver_trees)
+```
+
+Looking at this data, we might want to know how many different species there are in each of the Vancouver neighbourhoods. We can find this out with the **group_then_sumz** function. 
+
+```{r function trees example}
+group_then_sumz(vancouver_trees, neighbourhood_name, species_name)
+```
+
+Now not only do we know how many species of trees there in each of the Vancouver neighbourhoods, we can easily see the neighbourhoods with the most variety in species because they have been sorted from highest to lowest counts of unique observations. Hastings-Sunrise, Kitsilano, and Renfrew-Collingwood have the highest amounts of unique species of trees you can find there. 

@@ -1,12 +1,20 @@
 Package: assignmentb2mbeletsky
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Title: Group By, Then Summarize Data
+Version: 0.1.0
+Authors@R: person("Maria", "Beletsky", email = "beletsky@student.ubc.ca",
+  role = c("aut", "cre"))
+Description: Carry out a dplyr "group_by()" then "summarize()" workflow.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Imports: 
+    dplyr,
+    magrittr,
+    tibble,
+    tidyr
+Suggests: 
+    datateachr,
+    palmerpenguins,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
