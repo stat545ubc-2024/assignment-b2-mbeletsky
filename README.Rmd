@@ -83,4 +83,4 @@ Looking at this data, we might want to know how many different species there are
 group_then_sumz(vancouver_trees, neighbourhood_name, species_name)
 ```
 
-Now not only do we know how many species of trees there in each of the Vancouver neighbourhoods, we can easily see the neighbourhoods with the most variety in species because they have been sorted from highest to lowest counts of unique observations. Hastings-Sunrise, Kitsilano, and Renfrew-Collingwood have the highest amounts of unique species of trees you can find there. 
+Now not only do we know how many species of trees there in each of the Vancouver neighbourhoods, we can easily see the neighbourhoods with the most variety in species because they have been sorted from highest to lowest counts of unique observations. Hastings-Sunrise, Kitsilano, and Renfrew-Collingwood are the neighbourhoods with the highest amounts of unique species of trees you can find there. 
