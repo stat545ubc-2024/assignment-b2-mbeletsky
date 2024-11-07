@@ -12,6 +12,7 @@ test3_manual <- vancouver_trees %>%
 test3_function <- group_then_sumz(vancouver_trees, neighbourhood_name, species_name)
 
 test_that("group_then_sumz works", {
+  expect_type(table, "closure")
   expect_no_error(group_then_sumz(vancouver_trees, neighbourhood_name, species_name), message = NULL, class = NULL)
   expect_no_error(group_then_sumz(vancouver_trees, genus_name, cultivar_name), message = NULL, class = NULL)
   expect_no_error(group_then_sumz(vancouver_trees, neighbourhood_name, date_planted), message = NULL, class = NULL)
