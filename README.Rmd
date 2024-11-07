@@ -44,13 +44,14 @@ The "palmerpenguins" package includes a dataset about 344 penguins of 3 differen
 
 The "datateachr" package includes several datasets that are also intended to be used as examples when learning how to do data exploration and analysis in R. 
 
-Then, let's load our package, which will give us the ability to use the **group_then_sumz()** function! We will also load the "dplyr" and "tidyr" packages as our "assignmentb2mbeletsky" package relies on functions imported from those packages. 
+Then, let's load our package, which will give us the ability to use the **group_then_sumz()** function! We will also load additional packages as our "assignmentb2mbeletsky" package relies on functions imported from those packages. 
 
 ```{r load our package}
 library(assignmentb2mbeletsky)
 library(dplyr)
 library(tidyr)
 library(magrittr)
+library(tibble)
 ```
 
 ### Penguins Example
