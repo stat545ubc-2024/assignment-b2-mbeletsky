@@ -139,7 +139,7 @@ head(vancouver_trees)
 
 Looking at this data, we might want to know how many different species
 there are in each of the Vancouver neighbourhoods. We can find this out
-with the **group_then_sumz** function.
+with the **group_then_sumz()** function.
 
 ``` r
 group_then_sumz(vancouver_trees, neighbourhood_name, species_name)
